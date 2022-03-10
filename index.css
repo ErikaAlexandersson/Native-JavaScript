@@ -1,0 +1,601 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #464d63;
+}
+@font-face {
+  font-family: Shadows;
+  src: url(/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf) format("truetype");
+}
+body {
+  height: 100vh;
+  background-color: whitesmoke;
+  font-family: Shadows;
+  display: grid;
+  grid-template-columns: 7% 37% 1% 50% 5%;
+  grid-template-rows: 10% 80% 10%;
+  grid-template-areas:
+    ". . . . ."
+    ". flip . recepie ."
+    ". . . footer .";
+}
+/*---------------------FRAMSIDA START ---------------------------*/
+.maincontainer {
+  grid-area: flip;
+  height: 100%;
+  width: 100%;
+  transition: 2s;
+  position: relative;
+}
+
+.thecard {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 2s ease;
+}
+
+.thefront {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+#thecard {
+  height: 100%;
+  background-image: url(paper-effect.jpg);
+  background-position: center;
+  background-size: cover;
+  animation-delay: 0.5s;
+  animation-duration: 3s;
+  box-shadow: 0px 0px 10px 5px #888;
+  border-radius: 0px 10px 10px 0px;
+}
+.header {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: rgb(36, 34, 34);
+  border-radius: 0px 10px 10px 0px;
+  background-image: linear-gradient(
+    rgba(248, 245, 236, 0.527) 58px,
+    rgba(248, 245, 236, 0.527) 0px,
+    rgb(126, 39, 39) 4px
+  );
+}
+.intro-section {
+  padding-left: 60px;
+  height: 90%;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.6rem;
+  color: rgb(36, 34, 34);
+  background-image: repeating-linear-gradient(
+    rgba(248, 245, 236, 0.527) 0px,
+    rgba(248, 245, 236, 0.527) 24px,
+    rgb(10, 61, 61) 26px
+  );
+}
+.intro-text {
+  padding-top: 22px;
+}
+
+#holes {
+  width: 20px;
+  height: 20px;
+  display: inline;
+  position: absolute;
+  left: 10px;
+  top: 88px;
+  background-color: whitesmoke;
+  border: 1px solid rgb(59, 57, 57);
+  box-shadow: 0px 0px 3px 1px #888;
+  border-radius: 50%;
+}
+
+#holes::after,
+#back-holes::after {
+  content: "";
+  position: absolute;
+  top: 300px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  border: 1px solid rgb(59, 57, 57);
+}
+
+#line {
+  height: 100%;
+  width: 3px;
+  background-color: rgb(126, 39, 39);
+  position: absolute;
+  top: 0px;
+  left: 40px;
+  display: inline;
+}
+/*---------------------FORMUlÄR-----------------------------------*/
+
+label {
+  display: block;
+}
+
+#sign-in-btn {
+  margin-top: 20px;
+  width: 70px;
+  margin-top: 10px;
+  background-color: rgba(75, 65, 65, 0.247);
+}
+
+.already-user {
+  margin-top: 30px;
+}
+
+/*---------------------BAKSIDA START-----------------------------------*/
+.theback {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-image: url(paper-effect.jpg);
+  background-size: cover;
+  color: #333;
+  transform: rotateY(180deg);
+  box-shadow: 0px 0px 10px 5px #888;
+  border-radius: 20px 0px 0px 10px;
+}
+
+.backface-section {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: 10% 8% 34% 48%;
+  grid-template-areas:
+    "headers headers headers"
+    ". search ."
+    ". canvas ."
+    ". shopping .";
+  background-image: repeating-linear-gradient(
+    rgba(248, 245, 236, 0.527) 0px,
+    rgba(248, 245, 236, 0.527) 24px,
+    rgb(10, 61, 61) 26px
+  );
+}
+
+.backface-header {
+  width: 100%;
+  font-size: 1.6rem;
+  grid-area: headers;
+  padding-top: 20px;
+  text-align: center;
+  border-radius: 0px 10px 10px 0px;
+  background-image: linear-gradient(
+      rgba(248, 245, 236, 0.527) 62px,
+      rgba(248, 245, 236, 0.527) 0px,
+      rgb(126, 39, 39) 2px
+    ),
+    url(paper-effect.jpg);
+  background-size: cover;
+}
+
+#canvas {
+  grid-area: canvas;
+  margin-top: 18px;
+}
+
+#search {
+  grid-area: search;
+}
+
+#shopping {
+  margin-top: 20px;
+  grid-area: shopping;
+}
+
+#shopping-list {
+  padding-top: 5px;
+}
+
+.save-to-my-list {
+  position: absolute;
+  display: none;
+  margin-left: 20%;
+  bottom: 10px;
+  background-color: rgba(165, 155, 100, 0.767);
+  padding: 3px;
+}
+
+#back-line {
+  height: 100%;
+  width: 3px;
+  background-color: rgb(126, 39, 39);
+  position: absolute;
+  top: 0px;
+  right: 40px;
+  display: inline;
+}
+
+#backface-p {
+  font-size: 1rem;
+  padding: 14px;
+}
+
+#searchbar2 {
+  align-self: center;
+  border-radius: 10px;
+  height: 30px;
+  background-color: whitesmoke;
+  padding: 3px;
+}
+#search-button2 {
+  padding: 5px;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 20px;
+  background-color: rgba(165, 155, 100, 0.767);
+}
+
+.nutristions-button {
+  background-color: rgba(165, 155, 100, 0.767);
+  padding: 5px;
+  border-radius: 10px;
+  display: none;
+}
+
+#back-holes {
+  width: 20px;
+  height: 20px;
+  display: inline;
+  position: absolute;
+  right: 10px;
+  top: 88px;
+  background-color: whitesmoke;
+  border: 1px solid rgb(59, 57, 57);
+  box-shadow: 0px 0px 3px 1px #888;
+  border-radius: 50%;
+}
+
+#my-basket {
+  position: absolute;
+  bottom: 1px;
+  display: none;
+}
+
+/*---------------------RECEPT KORT-----------------------------------*/
+
+.recepies {
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+      rgba(248, 245, 236, 0.527) 0px,
+      rgba(248, 245, 236, 0.527) 24px,
+      rgb(10, 61, 61) 26px
+    ),
+    url(paper-effect.jpg);
+  background-size: cover;
+  color: rgb(17, 16, 16);
+  box-shadow: 0px 0px 10px 5px #888;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.recepieheader {
+  width: 100%;
+  grid-area: header;
+  font-size: 1.6rem;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 0px 10px 10px 0px;
+  background-image: linear-gradient(
+      rgba(248, 245, 236, 0.527) 62px,
+      rgba(248, 245, 236, 0.527) 0px,
+      rgb(126, 39, 39) 2px
+    ),
+    url(paper-effect.jpg);
+  background-size: cover;
+}
+
+.recepieimage {
+  grid-area: image;
+  width: 100%;
+  display: flex;
+  align-content: space-around;
+  justify-items: center;
+}
+
+.recepielist {
+  grid-area: list;
+  line-height: 1.6rem;
+  max-height: 90%;
+  overflow: scroll;
+}
+
+.ingredient-list {
+  display: flex;
+  letter-spacing: 0.2rem;
+  list-style: none;
+  width: 100%;
+  justify-content: space-between;
+}
+.span-move-to-list {
+  display: none;
+}
+
+.delete {
+  color: rgba(78, 82, 78, 0.747);
+  text-shadow: 2px black;
+  font-size: 1.2rem;
+  background-color: rgba(248, 245, 236, 0);
+  border: none;
+  justify-items: flex-end;
+  align-self: flex-start;
+}
+
+.delete:hover {
+  color: green;
+}
+
+img {
+  max-width: 200px;
+  max-height: 150px;
+  display: flex;
+  border-radius: 20px;
+  padding-top: 16px;
+  margin: auto;
+}
+
+a {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+#recepie-holes,
+#recepie-holes-hide {
+  width: 20px;
+  height: 20px;
+  display: inline;
+  position: absolute;
+  left: 10px;
+  top: 88px;
+  background-color: whitesmoke;
+  border: 1px solid rgb(59, 57, 57);
+  box-shadow: 0px 0px 3px 1px #888;
+  border-radius: 50%;
+}
+
+#recepie-holes::after,
+#recepie-holes-hide::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: inline;
+  position: absolute;
+  top: 300px;
+  background-color: whitesmoke;
+  border: 1px solid rgb(59, 57, 57);
+  box-shadow: 0px 0px 3px 1px #888;
+  border-radius: 50%;
+  transition: 3s;
+}
+
+#recepie-holes-hide,
+#recepie-holes-hide::after {
+  opacity: 0;
+  transition: 2s;
+}
+
+#recepie-line {
+  height: 100%;
+  width: 3px;
+  background-color: rgb(126, 39, 39);
+  position: absolute;
+  top: 0px;
+  left: 40px;
+  display: inline-block;
+  z-index: 100;
+  transition: 3s;
+}
+
+/*---------------------CAROUSEl-----------------------------------*/
+#carousel-container {
+  height: 100%;
+  width: 100%;
+  flex-shrink: 0;
+  position: relative;
+  opacity: 0;
+  transition: 3s;
+  grid-area: recepie;
+  overflow: hidden;
+}
+
+#carousel-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.recepie-slide {
+  flex-shrink: 0;
+  width: 100%;
+  min-height: 100%;
+  flex-grow: 6;
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: 10% 30% 5% 55%;
+  grid-template-areas:
+    "header header header"
+    ". image ."
+    ". ad ."
+    ". list .";
+  color: rgb(17, 16, 16);
+  box-shadow: 0px 0px 10px 5px #888;
+  border-radius: 0px 10px 10px 0px;
+}
+
+a {
+  grid-area: list;
+  align-self: flex-end;
+  justify-self: center;
+}
+
+.left-arrow,
+.right-arrow {
+  cursor: pointer;
+  font-size: 60px;
+  height: max-content;
+  margin-top: 10%;
+  text-shadow: 10px, rgb(59, 57, 57);
+}
+
+.add-to-chart {
+  grid-area: ad;
+  color: #5a5050;
+  align-self: flex-end;
+  justify-self: flex-end;
+  font-weight: 900;
+}
+
+/*---------------------MY PAGE -----------------------------------*/
+.mypage {
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: 10% 80% 10%;
+  grid-template-areas:
+    ". . ."
+    ". main ."
+    " . . .";
+}
+
+.main {
+  border-radius: 0px 10px 10px 0px;
+  box-shadow: 0px 0px 10px 5px #888;
+  height: 100%;
+  grid-area: main;
+  border: 1px solid black;
+  background-image: repeating-linear-gradient(
+      rgba(248, 245, 236, 0.527) 0px,
+      rgba(248, 245, 236, 0.527) 24px,
+      rgb(10, 61, 61) 26px
+    ),
+    url(paper-effect.jpg);
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 10% 90%;
+  grid-template-rows: 10% 90%;
+  grid-template-areas:
+    "holes-lines shoppingheader "
+    "holes-lines main-info";
+}
+
+#mypage-header {
+  grid-area: shoppingheader;
+  margin-left: 32%;
+  font-size: 2rem;
+}
+.main-info {
+  grid-area: main-info;
+}
+
+.holes-lines {
+  grid-area: holes-lines;
+}
+
+.pluss,
+.minus {
+  align-self: center;
+  height: 20px;
+  width: 15px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 800;
+}
+
+.number {
+  font-size: 1.6rem;
+}
+.amount {
+  display: flex;
+  justify-content: space-between;
+  width: 80px;
+}
+
+.amount-display-none {
+  display: none;
+}
+
+.items {
+  display: inline;
+}
+
+.list-item {
+  margin-left: 20px;
+  display: flex;
+  font-size: 1.4rem;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.delete-item {
+  cursor: pointer;
+}
+
+.line-through {
+  text-decoration: line-through;
+  color: red;
+  margin: auto;
+}
+
+.id {
+  display: none;
+}
+
+.uppdate-btn {
+  margin-top: 15px;
+  width: 150px;
+  margin-left: 35%;
+  background-color: rgba(165, 155, 100, 0.767);
+}
+
+#grocery-holes {
+  position: absolute;
+  top: 31%;
+  margin-left: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: whitesmoke;
+  border: 1px solid rgb(59, 57, 57);
+  box-shadow: 0px 0px 3px 1px #888;
+  border-radius: 50%;
+}
+
+#grocery-holes::after {
+  position: absolute;
+  content: "";
+  top: 230px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  box-shadow: 0px 0px 3px 1px #888;
+  border: 1px solid rgb(59, 57, 57);
+}
+
+#grocery-line {
+  height: 100%;
+  position: relative;
+  left: 50px;
+  width: 3px;
+  background-color: rgb(126, 39, 39);
+}
+
+#back-home {
+  font-family: Shadows;
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 10%;
+}
