@@ -167,15 +167,15 @@ label {
 
 .backface-header {
   width: 100%;
-  font-size: 1.6rem;
+  font-size: 2.6rem;
   grid-area: headers;
   padding-top: 20px;
   text-align: center;
   border-radius: 0px 10px 10px 0px;
   background-image: linear-gradient(
-      rgba(248, 245, 236, 0.527) 62px,
-      rgba(248, 245, 236, 0.527) 0px,
-      rgb(126, 39, 39) 2px
+      rgba(248, 245, 236, 0.527) 90px,
+      rgba(248, 245, 236, 0.527) 10px,
+      rgb(128, 39, 39) 4px
     ),
     url(paper-effect.jpg);
   background-size: cover;
@@ -224,6 +224,7 @@ label {
 }
 
 #searchbar2 {
+  font-size: 1.4rem;
   align-self: center;
   border-radius: 10px;
   height: 30px;
@@ -231,6 +232,7 @@ label {
   padding: 3px;
 }
 #search-button2 {
+  font-size: 1.4rem;
   padding: 5px;
   border-radius: 10px;
   margin: auto;
@@ -239,6 +241,7 @@ label {
 }
 
 .nutristions-button {
+  font-size: 1.4rem;
   background-color: rgba(165, 155, 100, 0.767);
   padding: 5px;
   border-radius: 10px;
@@ -284,13 +287,13 @@ label {
 .recepieheader {
   width: 100%;
   grid-area: header;
-  font-size: 1.6rem;
+  font-size: 2.6rem;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 0px 10px 10px 0px;
   background-image: linear-gradient(
-      rgba(248, 245, 236, 0.527) 62px,
+      rgba(248, 245, 236, 0.527) 90px,
       rgba(248, 245, 236, 0.527) 0px,
       rgb(126, 39, 39) 2px
     ),
@@ -307,8 +310,10 @@ label {
 }
 
 .recepielist {
+  margin-top: 20px;
+  font-size: 1.4rem;
   grid-area: list;
-  line-height: 1.6rem;
+  line-height: 1.62rem;
   max-height: 90%;
   overflow: scroll;
 }
@@ -339,8 +344,8 @@ label {
 }
 
 img {
-  max-width: 200px;
-  max-height: 150px;
+  max-width: 400px;
+  max-height: 250px;
   display: flex;
   border-radius: 20px;
   padding-top: 16px;
@@ -453,6 +458,7 @@ a {
 }
 
 .add-to-chart {
+  font-size: 1.4rem;
   grid-area: ad;
   color: #5a5050;
   align-self: flex-end;
@@ -591,6 +597,12 @@ a {
   left: 50px;
   width: 3px;
   background-color: rgb(126, 39, 39);
+}
+
+#grocerylist {
+  margin-top: 10px;
+  font-size: 1.4rem;
+  line-height: 1.62rem;
 }
 
 #back-home {
